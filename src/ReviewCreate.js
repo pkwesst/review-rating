@@ -1,11 +1,10 @@
-import { useContext, useReducer, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { ReviewDispatchContext } from "./ReviewContext";
 import styled from "styled-components";
 import ReviewRating from "./ReviewRating";
 
 const ReviewCreate = () => {
   const { onCreate } = useContext(ReviewDispatchContext);
-
   const [review, setReview] = useState({
     author: "",
     content: "",
@@ -45,7 +44,22 @@ const ReviewCreate = () => {
     <ReviewCreateStyle>
       <div className="ReviewCreate-container">
         <h2>What's Review rating ?</h2>
-        <ReviewRating onChangze={ButtonChangeReview} />
+        <ReviewRating selected={changeReview} />
+        <ReviewRatingStyle>
+          <div>
+            {/* <ul className="rating">
+              <li key={1}>
+                <input
+                  name="rating"
+                  type="radio"
+                  value={1}
+                  onChange={changeReview}
+                />
+                <label htmlFor="1">1</label>
+              </li>
+            </ul> */}
+          </div>
+        </ReviewRatingStyle>
         <div className="input-button">
           <div className="input-wrap">
             <input
@@ -125,3 +139,47 @@ const ReviewCreateStyle = styled.div`
   }
 `;
 export default ReviewCreate;
+
+const ReviewRatingStyle = styled.div`
+  width: 90%;
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .rating li {
+    display: flex;
+    justify-content: space-around;
+    positon: relative;
+    background: hsl(228, 33%, 97%);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 16px;
+    padding: 10px;
+    transition: 0.1s;
+    color: hsl(239, 57%, 85%);
+  }
+
+  .rating li label {
+    position: absolute;
+    // padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .rating li:hover {
+    background: hsl(211, 10%, 45%);
+    color: #fff;
+  }
+
+  [type="radio"] {
+    // opacity: 0;
+  }
+
+  [type="radio"]:checked {
+    background: #ff6a95;
+    color: #fff;
+  }
+`;

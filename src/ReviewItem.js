@@ -35,8 +35,6 @@ const ReviewItem = ({ id, author, content, rating, created_date }) => {
     toggleWantEdit();
   };
 
-  console.log(currentContent);
-
   return (
     id && (
       <ReviewItemStyle>

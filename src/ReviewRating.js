@@ -1,49 +1,103 @@
 import styled from "styled-components";
 
-const ReviewRating = () => {
+const ReviewRating = ({ selected }) => {
   return (
     <ReviewRatingStyle>
       <div>
         <ul className="rating">
-          <li>
-            <input type="radio" />
+          <li key={1}>
+            <input
+              type="radio"
+              id="1"
+              name="rating"
+              value={1}
+              onChange={selected}
+            />
             <label htmlFor="1">1</label>
           </li>
-          <li>
-            <input type="radio" />
+          <li key={2}>
+            <input
+              id="2"
+              name="rating"
+              type="radio"
+              value={2}
+              onChange={selected}
+            />
             <label htmlFor="2">2</label>
           </li>
-          <li>
-            <input type="radio" />
-            <label>3</label>
+          <li key={3}>
+            <input
+              id="3"
+              name="rating"
+              type="radio"
+              value={3}
+              onChange={selected}
+            />
+            <label htmlFor="3">3</label>
           </li>
-          <li>
-            <input type="radio" />
-            <label>4</label>
+          <li key={4}>
+            <input
+              id="4"
+              name="rating"
+              type="radio"
+              value={4}
+              onChange={selected}
+            />
+            <label htmlFor="4">4</label>
           </li>
-          <li>
-            <input type="radio" />
-            <label>5</label>
+          <li key={5}>
+            <input
+              id="5"
+              name="rating"
+              type="radio"
+              value={5}
+              onChange={selected}
+            />
+            <label htmlFor="5">5</label>
           </li>
-          <li>
-            <input type="radio" />
-            <label>6</label>
+          <li key={6}>
+            <input
+              id="6"
+              name="rating"
+              type="radio"
+              value={6}
+              onChange={selected}
+            />
+            <label htmlFor="6">6</label>
           </li>
-          <li>
-            <input type="radio" />
-            <label>7</label>
+          <li key={7}>
+            <input
+              id="7"
+              name="rating"
+              type="radio"
+              value={7}
+              onChange={selected}
+            />
+            <label htmlFor="7">7</label>
           </li>
-          <li>
-            <input type="radio" />
-            <label>8</label>
+          <li key={8}>
+            <input
+              id="8"
+              name="rating"
+              type="radio"
+              value={8}
+              onChange={selected}
+            />
+            <label htmlFor="8">8</label>
           </li>
-          <li>
-            <input type="radio" />
-            <label>9</label>
+          <li key={9}>
+            <input
+              id="9"
+              name="rating"
+              type="radio"
+              value={9}
+              onChange={selected}
+            />
+            <label htmlFor="9">9</label>
           </li>
-          <li>
-            <input type="radio" />
-            <label>10</label>
+          <li id="10" key={10}>
+            <input name="rating" type="radio" value={10} onChange={selected} />
+            <label htmlFor="10">10</label>
           </li>
         </ul>
       </div>
@@ -60,7 +114,7 @@ const ReviewRatingStyle = styled.div`
     padding: 0;
   }
 
-  li {
+  .rating li {
     display: flex;
     justify-content: space-around;
     positon: relative;
@@ -81,7 +135,7 @@ const ReviewRatingStyle = styled.div`
   }
 
   .rating li:hover {
-    background: hsl(211, 10%, 45%);
+    background: hsl(238, 40%, 52%);
     color: #fff;
   }
 
@@ -89,9 +143,15 @@ const ReviewRatingStyle = styled.div`
     opacity: 0;
   }
 
-  [type="radio"]:checked {
-    background: #ff6a95;
-    color: #fff;
+  [type="radio"]:checked ~ label {
+    background: hsl(238, 40%, 52%);
+    display: flex;
+    justify-content: space-around;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    font-size: 16px;
+    padding: 10px;
   }
 `;
 
