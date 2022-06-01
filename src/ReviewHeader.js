@@ -6,14 +6,11 @@ const ReviewHeaderStyle = styled.header`
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: hsl(228, 33%, 97%);
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 
-  &:hover {
-    span {
-      color: orange;
-    }
+  span {
+    color: orange;
   }
 `;
 

@@ -26,7 +26,7 @@ const reducer = (state, action) => {
     }
     case "EDIT": {
       return state.map((it) =>
-        it.id === action.targetid
+        it.id === action.targetId
           ? {
               ...it,
               content: action.newContent,
@@ -44,16 +44,17 @@ const reducer = (state, action) => {
 
 const ReviewContext = ({ children }) => {
   const [data, dispatch] = useReducer(reducer, []);
-  const dataId = useRef(0);
+  const dataId = useRef(1);
+
   const getData = async () => {
     setTimeout(async () => {
       const res = await fetch(
         "https://jsonplaceholder.typicode.com/comments"
       ).then((res) => res.json());
 
-      const initData = res.slice(0, 5).map((it) => {
+      const initData = res.slice(0, 25).map((it) => {
         return {
-          author: it.name,
+          author: it.name.substr(0, 15),
           content: it.body,
           rating: Math.floor(Math.random() * 10) + 1,
           created_date: new Date().getTime(),
@@ -63,8 +64,6 @@ const ReviewContext = ({ children }) => {
       dispatch({ type: "READ", data: initData });
     }, 1000);
   };
-
-  console.log({ data });
 
   useEffect(() => {
     getData();
@@ -93,10 +92,14 @@ const ReviewContext = ({ children }) => {
     });
   }, []);
 
+  const momoizedDispatch = useMemo(() => {
+    return { onCreate, onRemove, onEdit };
+  });
+
   return (
     <div>
       <ReviewStateContext.Provider value={data}>
-        <ReviewDispatchContext.Provider value={dispatch}>
+        <ReviewDispatchContext.Provider value={momoizedDispatch}>
           {children}
         </ReviewDispatchContext.Provider>
       </ReviewStateContext.Provider>
