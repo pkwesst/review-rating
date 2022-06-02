@@ -54,7 +54,7 @@ const ReviewCreate = () => {
             <textarea
               className="author"
               name="author"
-              placeholder="Nickname"
+              placeholder="NickName"
               type="text"
               maxLength={15}
               ref={authorRef}
@@ -120,19 +120,32 @@ const ReviewCreateStyle = styled.div`
     padding-left: 10px;
     height: 30%;
     margin-bottom: 20px;
-    font-size: 16px;
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    ::placeholder {
+      font-family: "Poppins", sans-serif;
+    }
   }
 
   .content {
     resize: none;
     height: 70%;
     padding: 9px;
-    font-size: 16px;
+    font-size: 13px;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 1px;
+
+    ::placeholder {
+      font-family: "Poppins", sans-serif;
+    }
   }
 
   .send-button button {
     width: 5em;
     height: 10em;
+    font-size: 13px;
     border: none;
     border-radius: 7px;
     background-color: hsl(211, 10%, 45%);
