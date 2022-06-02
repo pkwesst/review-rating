@@ -141,7 +141,7 @@ const ReviewRatingStyle = styled.div`
   }
 
   .rating li:hover {
-    background: hsl(238, 40%, 52%);
+    background-color: hsl(238, 40%, 52%);
     color: #fff;
   }
 
@@ -162,6 +162,30 @@ const ReviewRatingStyle = styled.div`
     padding-top: 13px;
     position: absolute;
     top: 14.69em;
+  }
+
+  @media (max-width: 1030px) {
+    .rating li {
+      width: 15px;
+      height: 15px;
+      font-size: 13px;
+    }
+
+    .rating li label {
+      position: absolute;
+      top: 18.4em;
+      // padding: 10px;
+      cursor: pointer;
+      padding: 7px;
+    }
+
+    [type="radio"]:checked ~ label {
+      position: absolute;
+      top: 18.1em;
+      width: 15px;
+      height: 12px;
+      font-size: 13px;
+    }
   }
 `;
 

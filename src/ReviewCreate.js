@@ -54,7 +54,7 @@ const ReviewCreate = () => {
             <textarea
               className="name"
               name="name"
-              placeholder="NickName"
+              placeholder="Item"
               type="text"
               maxLength={15}
               ref={nameRef}

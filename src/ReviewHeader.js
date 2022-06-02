@@ -9,6 +9,8 @@ const ReviewHeaderStyle = styled.header`
   height: 80px;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
+  letter-spacing: 2px;
+  word-spacing: 5px;
   position: fixed;
   background-color: hsl(223, 19%, 93%);
   z-index: 10;
@@ -16,6 +18,10 @@ const ReviewHeaderStyle = styled.header`
 
   span {
     color: orange;
+  }
+
+  &:hover span {
+    color: black;
   }
 `;
 
