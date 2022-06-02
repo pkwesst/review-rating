@@ -95,8 +95,14 @@ const ReviewRating = ({ selected }) => {
             />
             <label htmlFor="9">9</label>
           </li>
-          <li id="10" key={10}>
-            <input name="rating" type="radio" value={10} onChange={selected} />
+          <li key={10}>
+            <input
+              id="10"
+              name="rating"
+              type="radio"
+              value={10}
+              onChange={selected}
+            />
             <label htmlFor="10">10</label>
           </li>
         </ul>
@@ -147,11 +153,15 @@ const ReviewRatingStyle = styled.div`
     background: hsl(238, 40%, 52%);
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 26px;
-    height: 26px;
+    height: 23px;
     border-radius: 50%;
     font-size: 16px;
     padding: 10px;
+    padding-top: 13px;
+    position: absolute;
+    top: 13.45em;
   }
 `;
 
