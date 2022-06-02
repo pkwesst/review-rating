@@ -6,7 +6,7 @@ import ReviewRating from "./ReviewRating";
 const ReviewCreate = () => {
   const { onCreate } = useContext(ReviewDispatchContext);
   const [review, setReview] = useState({
-    author: "",
+    name: "",
     content: "",
     rating: "",
   });
@@ -18,12 +18,12 @@ const ReviewCreate = () => {
     });
   };
 
-  const authorRef = useRef(null);
+  const nameRef = useRef(null);
   const contentRef = useRef(null);
 
   const ButtonChangeReview = () => {
-    if (review.author.length < 1) {
-      authorRef.current.focus();
+    if (review.name.length < 1) {
+      nameRef.current.focus();
       return;
     }
     if (review.content.length < 1) {
@@ -34,11 +34,11 @@ const ReviewCreate = () => {
       window.confirm("Click rating number !");
       return;
     }
-    onCreate(review.author, review.content, review.rating);
+    onCreate(review.name, review.content, review.rating);
     alert("Add Review !");
 
     setReview({
-      author: "",
+      name: "",
       content: "",
       rating: "",
     });
@@ -52,13 +52,13 @@ const ReviewCreate = () => {
         <div className="input-button">
           <div className="input-wrap">
             <textarea
-              className="author"
-              name="author"
+              className="name"
+              name="name"
               placeholder="NickName"
               type="text"
               maxLength={15}
-              ref={authorRef}
-              value={review.author}
+              ref={nameRef}
+              value={review.name}
               onChange={changeReview}
             />
             <textarea
@@ -84,12 +84,13 @@ const ReviewCreate = () => {
 const ReviewCreateStyle = styled.div`
   display: flex;
   justify-content: center;
+  padding-top: 100px;
 
   .ReviewCreate-container {
     width: 50vw;
     display: flex;
     min-height: 17em;
-    // margin-bottom: 20px;
+    margin-top: 20px;
     padding: 30px;
     flex-direction: column;
     align-items: center;
@@ -114,7 +115,7 @@ const ReviewCreateStyle = styled.div`
     margin-right: 40px;
   }
 
-  .author {
+  .name {
     resize: none;
     padding-top: 8px;
     padding-left: 10px;

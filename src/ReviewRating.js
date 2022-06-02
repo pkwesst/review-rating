@@ -161,7 +161,7 @@ const ReviewRatingStyle = styled.div`
     padding: 10px;
     padding-top: 13px;
     position: absolute;
-    top: 13.45em;
+    top: 14.69em;
   }
 `;
 

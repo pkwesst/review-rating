@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { HiMinus, HiPlus } from "react-icons/hi";
 import { MdDelete, MdEdit, MdClose, MdCheck } from "react-icons/md";
 
-const ReviewItem = ({ id, author, content, rating, created_date }) => {
+const ReviewItem = ({ id, name, content, rating, created_date }) => {
   const { onRemove, onEdit } = useContext(ReviewDispatchContext);
 
   const [wantEdit, setWantEdit] = useState(false);
@@ -37,13 +37,13 @@ const ReviewItem = ({ id, author, content, rating, created_date }) => {
 
   const clickPlus = () => {
     if (rating < 10) {
-      onEdit(id, currentContent, rating + 1);
+      onEdit(id, currentContent, parseInt(rating) + 1);
     }
   };
 
   const clickMius = () => {
     if (rating > 1) {
-      onEdit(id, currentContent, rating - 1);
+      onEdit(id, currentContent, parseInt(rating) - 1);
     }
   };
 
@@ -63,7 +63,7 @@ const ReviewItem = ({ id, author, content, rating, created_date }) => {
           <div className="info-wrap">
             <div className="info-btn">
               <div className="info">
-                <span className="author">{author}</span>
+                <span className="name">{name}</span>
                 <span className="date">
                   {new Date(created_date).toLocaleDateString()}
                 </span>
@@ -151,7 +151,7 @@ const ReviewItemStyle = styled.div`
     padding-left: 20px;
   }
 
-  .author {
+  .name {
     color: hsl(212, 24%, 26%);
     font-weight: 700;
   }
