@@ -1,6 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
+const ReviewHeader = () => {
+  return (
+    <ReviewHeaderStyle>
+      <h2>
+        <span>★⭑</span> Review Rating
+      </h2>
+    </ReviewHeaderStyle>
+  );
+};
+
 const ReviewHeaderStyle = styled.header`
   display: flex;
   justify-content: center;
@@ -24,15 +34,5 @@ const ReviewHeaderStyle = styled.header`
     color: black;
   }
 `;
-
-const ReviewHeader = () => {
-  return (
-    <ReviewHeaderStyle>
-      <h2>
-        <span>★⭑</span> Review Rating
-      </h2>
-    </ReviewHeaderStyle>
-  );
-};
 
 export default ReviewHeader;
