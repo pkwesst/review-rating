@@ -25,7 +25,7 @@ const ReviewItem = ({ id, author, content, rating, created_date }) => {
       return;
     }
     if (window.confirm("Edit Review rating ?")) {
-      onEdit(id, currentContent);
+      onEdit(id, currentContent, rating);
       toggleWantEdit();
     }
   };
@@ -35,16 +35,28 @@ const ReviewItem = ({ id, author, content, rating, created_date }) => {
     toggleWantEdit();
   };
 
+  const clickPlus = () => {
+    if (rating < 10) {
+      onEdit(id, currentContent, rating + 1);
+    }
+  };
+
+  const clickMius = () => {
+    if (rating > 1) {
+      onEdit(id, currentContent, rating - 1);
+    }
+  };
+
   return (
     id && (
       <ReviewItemStyle>
         <div className="ReviewItem-container">
           <div className="rating">
-            <Button>
+            <Button onClick={clickPlus}>
               <HiPlus />
             </Button>
             <span>{rating}</span>
-            <Button>
+            <Button onClick={clickMius}>
               <HiMinus />
             </Button>
           </div>

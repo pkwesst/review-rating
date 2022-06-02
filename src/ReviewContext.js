@@ -30,6 +30,7 @@ const reducer = (state, action) => {
           ? {
               ...it,
               content: action.newContent,
+              rating: action.newRating,
             }
           : it
       );
@@ -84,11 +85,12 @@ const ReviewContext = ({ children }) => {
     });
   });
 
-  const onEdit = useCallback((targetId, newContent) => {
+  const onEdit = useCallback((targetId, newContent, newRating) => {
     dispatch({
       type: "EDIT",
       targetId,
       newContent,
+      newRating,
     });
   }, []);
 
