@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react";
-import { ReviewDispatchContext } from "./ReviewContext";
+import { ReviewDispatchContext } from "../ReviewContext";
 import styled from "styled-components";
 import ReviewRating from "./ReviewRating";
 

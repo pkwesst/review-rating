@@ -1,5 +1,5 @@
 import { memo, useContext, useRef, useState } from "react";
-import { ReviewDispatchContext } from "./ReviewContext";
+import { ReviewDispatchContext } from "../ReviewContext";
 import styled from "styled-components";
 import { HiMinus, HiPlus } from "react-icons/hi";
 import { MdDelete, MdEdit, MdClose, MdCheck } from "react-icons/md";
