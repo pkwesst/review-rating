@@ -150,12 +150,10 @@ const ReviewCreateStyle = styled.div`
     border: none;
     border-radius: 7px;
     background-color: hsl(211, 10%, 45%);
-    // background-color: hsl(212, 24%, 26%);
     color: hsl(228, 33%, 97%);
     cursor: pointer;
 
     &:hover {
-      // background-color: hsl(211, 10%, 45%);
       background-color: hsl(212, 24%, 26%);
       color: hsl(228, 33%, 97%);
     }

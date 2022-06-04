@@ -48,64 +48,62 @@ const ReviewItem = ({ id, name, content, rating, created_date }) => {
   };
 
   return (
-    id && (
-      <ReviewItemStyle>
-        <div className="ReviewItem-container">
-          <div className="rating">
-            <Button onClick={clickPlus}>
-              <HiPlus />
-            </Button>
-            <span>{rating}</span>
-            <Button onClick={clickMius}>
-              <HiMinus />
-            </Button>
-          </div>
-          <div className="info-wrap">
-            <div className="info-btn">
-              <div className="info">
-                <span className="name">{name}</span>
-                <span className="date">
-                  {new Date(created_date).toLocaleDateString()}
-                </span>
-              </div>
-              <div className="btn">
-                {wantEdit ? (
-                  <span className="btn">
-                    <ButtonSmall className="edit" onClick={clickEdit}>
-                      <MdCheck />
-                    </ButtonSmall>
-                    <ButtonSmall className="delete" onClick={clickCancel}>
-                      <MdClose />
-                    </ButtonSmall>
-                  </span>
-                ) : (
-                  <span>
-                    <ButtonSmall className="edit" onClick={toggleWantEdit}>
-                      <MdEdit />
-                    </ButtonSmall>
-                    <ButtonSmall className="delete" onClick={clickDelete}>
-                      <MdDelete />
-                    </ButtonSmall>
-                  </span>
-                )}
-              </div>
+    <ReviewItemStyle>
+      <div className="ReviewItem-container">
+        <div className="rating">
+          <Button onClick={clickPlus}>
+            <HiPlus />
+          </Button>
+          <span>{rating}</span>
+          <Button onClick={clickMius}>
+            <HiMinus />
+          </Button>
+        </div>
+        <div className="info-wrap">
+          <div className="info-btn">
+            <div className="info">
+              <span className="name">{name}</span>
+              <span className="date">
+                {new Date(created_date).toLocaleDateString()}
+              </span>
             </div>
-            <div className="content">
+            <div className="btn">
               {wantEdit ? (
-                <textarea
-                  autoFocus
-                  ref={currentContentRef}
-                  value={currentContent}
-                  onChange={(e) => setCurrentContent(e.target.value)}
-                />
+                <span className="btn">
+                  <ButtonSmall className="edit" onClick={clickEdit}>
+                    <MdCheck />
+                  </ButtonSmall>
+                  <ButtonSmall className="delete" onClick={clickCancel}>
+                    <MdClose />
+                  </ButtonSmall>
+                </span>
               ) : (
-                content
+                <span>
+                  <ButtonSmall className="edit" onClick={toggleWantEdit}>
+                    <MdEdit />
+                  </ButtonSmall>
+                  <ButtonSmall className="delete" onClick={clickDelete}>
+                    <MdDelete />
+                  </ButtonSmall>
+                </span>
               )}
             </div>
           </div>
+          <div className="content">
+            {wantEdit ? (
+              <textarea
+                autoFocus
+                ref={currentContentRef}
+                value={currentContent}
+                onChange={(e) => setCurrentContent(e.target.value)}
+              />
+            ) : (
+              content
+            )}
+          </div>
         </div>
-      </ReviewItemStyle>
-    )
+      </div>
+    </ReviewItemStyle>
   );
 };
 
