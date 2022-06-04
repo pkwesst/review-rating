@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/review-rating/static/css/main.21bd8bef.css",
+    "main.js": "/review-rating/static/js/main.b024ef22.js",
+    "index.html": "/review-rating/index.html",
+    "main.b024ef22.js.map": "/review-rating/static/js/main.b024ef22.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.21bd8bef.css",
+    "static/js/main.b024ef22.js"
+  ]
+}
